@@ -1,0 +1,46 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+body {
+  background-image: url('http://www.featurepics.com/StockImage/20100607/screen-with-sticky-notes-stock-picture-1559922.jpg');
+  background-size: cover;
+}
+
+.container {
+  background-color: lightgray;
+  opacity: .93;
+  min-height: 800px;
+}
+
+.jumbotron {
+  text-align: center;
+
+  /* Mozilla Firefox */
+  background-image: -moz-linear-gradient(left, #008080 0%,  #05C1FF 50%, #005757 100%);
+  /* Webkit (Safari/Chrome 10) */
+  background-image: -webkit-gradient(linear, left top, right top, color-stop(0, #008080),  color-stop(50, #05C1FF), color-stop(100, #005757));
+  /* Webkit (Chrome 11+) */
+  background-image: -webkit-linear-gradient(left, #008080 0%, #05C1FF 50%, #005757 100%);
+  /* W3C Markup */
+  background-image: linear-gradient(to right, #008080 0%, #05C1FF 50%, #005757 100%);
+}
+
+.well {
+  border: none;
+  border-radius: 0;
+  position: relative;
+  width: 30%;
+  background-color: #f6f9ea;
+}
+
+.well:before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  border-width:  20px 20px  0 0;
+  border-style: solid;
+  border-color: #e3eac5 lightgray;
+}
+.titles {
+}
