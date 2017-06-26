@@ -1,14 +1,17 @@
 <div class="titles">
   <h1>Lists</h1>
 </div>
+<div class="row">
+  <div class="note main col-xs-6">
+    <ul>
+      <% @lists.each do |list| %>
+      <li><%= link_to list.name, list_path(list) %></li>
+      <% end %>
+    </ul>
 
-<div class="well">
-  <ul>
-    <% @lists.each do |list| %>
-    <li><%= link_to list.name, list_path(list) %></li>
-    <% end %>
-  </ul>
+  </div>
+  <div class="tools col-xs-6 well">
+    <div href="#" data-toggle="tooltip" title="Add a New List">
+    <%= link_to image_tag("sharpie.png"), new_list_path %></div>
+  </div>
 </div>
-
-
-<p><%= link_to "New List", new_list_path %></p>

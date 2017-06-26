@@ -3,32 +3,35 @@
   <h1><%= @list.name  %></h1>
 </div>
 
-
-<div class="well">
-  <% if @list.tasks.any? %>
-    <h4>Here are the tasks for this list:</h4>
-
-    <ul>
-      <% @list.tasks.each do |task| %>
-        <li>
-          <%= task.description %>
-          <br>
-          <%= link_to "Edit", edit_list_task_path(@list, task) %>
-          /<%= link_to "Delete", list_task_path(@list, task),
-                                   :data => {:confirm => "Are you sure?",
-                                                  :method => "delete"} %>
-        </li>
-      <% end %>
-    </ul>
-  <% else %>
-    <p>There are no tasks yet!</p>
-  <% end %>
+<div class="row">
+  <div class="note col-xs-9">
+    <% if @list.tasks.any? %>
+      <h4>Here are the tasks for this list:</h4>
+      <ul>
+        <% @list.tasks.each do |task| %>
+          <li>
+            <%= task.description %>
+            <br>
+            <%= link_to "Edit", edit_list_task_path(@list, task) %>
+            /<%= link_to "Delete", list_task_path(@list, task),
+                                     :data => {:confirm => "Are you sure?",
+                                                    :method => "delete"} %>
+          </li>
+        <% end %>
+      </ul>
+    <% else %>
+      <p>There are no tasks yet!</p>
+    <% end %>
+    <span class='clickme' data-toggle="tooltip" title="Delete this list"><%= link_to "X", list_path(@list),
+                             :data => {:confirm => "You sure?",
+                                       :method => "delete"} %></span>
+  </div>
+  <div class="col-xs-3 tools well">
+    <h4>Tools:</h4>
+    <div href="#" data-toggle="tooltip" title="Add a task to this list"> <%= link_to image_tag("sharpie.png"), new_list_task_path(@list) %></div>
+    <br>
+    <div href="#" data-toggle="tooltip" title="Edit this list"> <%= link_to image_tag("editpen.png"), edit_list_path(@list) %></div>
+    <br>
+    <div href="#" data-toggle="tooltip" title="All Lists"> <%= link_to image_tag("rewind.png"), lists_path %></div>
+  </div>
 </div>
-
-
-<p><%= link_to "Add a task", new_list_task_path(@list) %></p>
-<p><%= link_to "Edit", edit_list_path(@list) %></p>
-<p><%= link_to "Delete", list_path(@list),
-                         :data => {:confirm => "You sure?",
-                                   :method => "delete"} %></p>
-<p><%= link_to "Return to all lists", lists_path %></p>

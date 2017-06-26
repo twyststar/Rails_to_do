@@ -3,9 +3,9 @@
   <head>
     <title><%= yield(:title) %></title>
     <%= csrf_meta_tags %>
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="https://fonts.googleapis.com/css?family=Lato|Oswald|Permanent+Marker" rel="stylesheet">
   </head>
 
   <body>
@@ -16,7 +16,7 @@
       <div class="jumbotron">
         <h1>To-do</h1>
       </div>
-      
+
       <%= yield %>
 
     </div>
