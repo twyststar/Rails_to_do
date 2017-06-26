@@ -2,7 +2,7 @@
   <h1>Lists</h1>
 </div>
 <div class="row">
-  <div class="note main col-xs-6">
+  <div class="note main col-xs-9">
     <ul>
       <% @lists.each do |list| %>
       <li><%= link_to list.name, list_path(list) %></li>
@@ -10,7 +10,8 @@
     </ul>
 
   </div>
-  <div class="tools col-xs-6 well">
+  <div class="tools col-xs-3 well">
+    <h4>Tools:</h4>
     <div href="#" data-toggle="tooltip" title="Add a New List">
     <%= link_to image_tag("sharpie.png"), new_list_path %></div>
   </div>

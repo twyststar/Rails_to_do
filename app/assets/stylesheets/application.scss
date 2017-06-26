@@ -5,9 +5,17 @@ body {
   font-family: 'Oswald', sans-serif;
   background-image: url('http://www.featurepics.com/StockImage/20100607/screen-with-sticky-notes-stock-picture-1559922.jpg');
   background-size: cover;
+  margin-bottom: 10px;
 }
 
+a{
+  color: black;
+  a:hover {
+    color: blue;
+  }
+}
 .container {
+  position: relative;
   background-color: lightgray;
   opacity: .93;
   min-height: 800px;
@@ -72,4 +80,24 @@ body {
   clear: both;
 }
 .titles {
+}
+.footer {
+  position: absolute;
+  height:80px;
+  bottom:0;
+  width: 100%;
+  margin-bottom:15px;
+  color: white;
+  margin-left: -1%;
+
+  background-image: -moz-linear-gradient(left, #008080 0%,  #05C1FF 50%, #005757 100%);
+  /* Webkit (Safari/Chrome 10) */
+  background-image: -webkit-gradient(linear, left top, right top, color-stop(0, #008080),  color-stop(50, #05C1FF), color-stop(100, #005757));
+  /* Webkit (Chrome 11+) */
+  background-image: -webkit-linear-gradient(left, #008080 0%, #05C1FF 50%, #005757 100%);
+  /* W3C Markup */
+  background-image: linear-gradient(to right, #008080 0%, #05C1FF 50%, #005757 100%);
+}
+.blockquote-footer{
+  color: white;
 }
